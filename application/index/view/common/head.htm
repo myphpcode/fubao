@@ -1,0 +1,108 @@
+<!--首栏目-->
+<nav class="nav-extended">
+    <div id="slide-out" class="side-nav collapsible" data-collapsible="accordion">
+        <p class="Collapsing current">首页</p>
+        <p class="Collapsing current"><a href="{:url('index/doctor/lst')}">专家介绍</a></p>
+        {volist name="cateRes" id="cate"}
+        {if condition='$cate.pid eq 0 && $cate.show_nav eq 1'}
+        <p class="Collapsing current">{$cate.cate_name}</p>
+        {if condition="$cate['children']"}
+
+        <div class="coll_body">
+            {volist name="$cate.children" id="cateChild"}
+            <a href="{:url('index/cate/index',array('id'=>$cateChild.id))}">{$cateChild.cate_name}</a>
+            {/volist}
+        </div>
+
+        {/if}
+        {/if}
+        {/volist}
+    </div>
+</nav>
+<script>
+    (function($){
+        // 侧边栏
+        $(function(){
+            $('.button-collapse').sideNav({
+                    menuWidth: 300,
+                    edge: 'right',
+                    closeOnClick: true,
+                    draggable: true
+                }
+            );
+        });
+        // 手风琴
+        // $(".coll_body").eq(0).show();
+        $(".Collapsing").click(function(){
+            $(this).next(".coll_body").slideToggle(500).siblings(".coll_body").slideUp(500);
+        });
+    })(jQuery);
+</script>
+<header>
+    <div id="name_box_w">
+        <!--电脑显示 -->
+        <div class="hide-on-med-and-down" style="position: fixed;width: 100%;background-color: #fff;">
+            <div class="Top">
+                <div class="header">
+                    <div class="left">欢迎访问安阳市妇幼保健院官网！</div>
+                    <div class="right">
+                        <a href="#" class="left">加入收藏</a>
+                        <a href="#" class="left jiange">联系我们</a>
+                        <a href="#" class="left jiange">办公室OA系统</a>
+                        <div class="left weixin jiange">官方微信
+                            <div class="wximg"><i class="sanjiao"></i><img src="__index__/image/erweima.png" alt="官方微信"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container ">
+                <ul class="clearfix">
+                    <li class="nav">
+                        <a href="/" class="O-nav">首页</a>
+                    </li>
+                    <li class="nav">
+                        <a href="{:url('index/doctor/lst')}" class="O-nav">专家介绍</a>
+                    </li>
+                    <li class="nav">
+                        <a href="{:url('index/about/index',array('id'=>1))}" class="O-nav">医院概况</a>
+                        <ul class="nav-2">
+
+                            <li><a href="{:url('index/about/index',array('id'=>1))}" class="omit">医院简介</a></li>
+                            <li><a href="{:url('index/about/index',array('id'=>2))}" class="omit">现任领导</a></li>
+                            <li><a href="{:url('index/about/index',array('id'=>3))}" class="omit">联系我们</a></li>
+
+                        </ul>
+                    </li>
+                    {volist name="cateRes" id="cate"}
+                    {if condition='$cate.pid eq 0 && $cate.show_nav eq 1'}
+                    <li class="nav">
+
+                        <a href="{:url('index/cate/index',array('id'=>$cate.id))}" class="O-nav">{$cate.cate_name}</a>
+
+                        {if condition="$cate['children']"}
+                        <ul class="nav-2">
+                            {volist name="$cate.children" id="cateChild"}
+                            <li><a href="{:url('index/cate/index',array('id'=>$cateChild.id))}" class="omit">{$cateChild.cate_name}</a></li>
+                            {/volist}
+                        </ul>
+                        {/if}
+                    </li>
+                    {/if}
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+        <div class="hide-on-med-and-down" style="height: 100px"></div>
+        <!-- 手机显示 -->
+        <div class="hide-on-large-only tou">
+            <div class="Name">安阳市妇幼保健院</div>
+            <div id="top_icon">
+                <a class="button-collapse waves-effect waves-light" data-activates="slide-out" id="menu_open">
+                    <i class="samll material-icons" style="color: #212020;">menu</i>
+                </a>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+</header>

@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0, maximum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>安阳妇幼</title>
+    <link rel="stylesheet" href="__index__/css/animate.css">
+    <link rel="stylesheet" href="__index__/css/style.css"/>
+    <link rel="stylesheet" href="__index__/css/materialize.css"/>
+    <link rel="stylesheet" href="__index__/css/swiper.css">
+    <link rel="stylesheet" href="__index__/fonts/fonts.css">
+    <script src="__index__/js/jquery-3.3.1.js"></script>
+    <script src="__index__/js/materialize.js"></script>
+    <script type="text/javascript" src="__index__/js/tab.js"></script>
+    <script src="__index__/js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+</head>
+<body>
+    <!--手机栏目-->
+    <nav class="nav-extended">
+        <div id="slide-out" class="side-nav collapsible" data-collapsible="accordion">
+            <p class="Collapsing current">星期一</p>
+            <div class="coll_body">
+                <a href="#">语文</a>
+                <a href="#">数学</a>
+                <a href="#">英语</a>
+                <a href="#">科学</a>
+            </div>
+            <p class="Collapsing current">星期一</p>
+            <div class="coll_body">
+                <a href="#">语文</a>
+                <a href="#">数学</a>
+                <a href="#">英语</a>
+                <a href="#">科学</a>
+            </div>
+            <p class="Collapsing current">星期一</p>
+            <div class="coll_body">
+                <a href="#">语文</a>
+                <a href="#">数学</a>
+                <a href="#">英语</a>
+                <a href="#">科学</a>
+            </div>
+            <p class="Collapsing current">星期一</p>
+            <div class="coll_body">
+                <a href="#">语文</a>
+                <a href="#">数学</a>
+                <a href="#">英语</a>
+                <a href="#">科学</a>
+            </div>
+            <p class="Collapsing current">星期一</p>
+            <div class="coll_body">
+                <a href="#">语文</a>
+                <a href="#">数学</a>
+                <a href="#">英语</a>
+                <a href="#">科学</a>
+            </div>
+        </div>
+    </nav>
+    <script>
+        (function($){
+            // 侧边栏
+            $(function(){
+                $('.button-collapse').sideNav({
+                        menuWidth: 300,
+                        edge: 'right',
+                        closeOnClick: true,
+                        draggable: true
+                    }
+                );
+            });
+            // 手风琴
+            $(".coll_body").eq(0).show();
+            $(".Collapsing").click(function(){
+                $(this).next(".coll_body").slideToggle(500).siblings(".coll_body").slideUp(500);
+            });
+        })(jQuery);
+    </script>
+    <header>
+        <div id="name_box_w">
+            <!--电脑显示 -->
+            <div class="hide-on-med-and-down" style="position: fixed;width: 100%;background-color: #fff;">
+                <div class="Top">
+                    <div class="header">
+                        <div class="left">欢迎访问妇科官网！</div>
+                        <div class="right">
+                            <a href="#" class="left">加入收藏</a>
+                            <a href="#" class="left jiange">联系我们</a>
+                            <a href="#" class="left jiange">办公室OA系统</a>
+                            <div class="left weixin jiange">官方微信
+                                <div class="wximg"><i class="sanjiao"></i><img src="__index__/image/erweima.png" alt="官方微信"> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container ">
+                    <ul class="clearfix">
+                        <li class="nav">
+                            <a href="#" class="O-nav">首页</a>
+                        </li>
+                        {volist name="cateRes" id="cate"}
+                        <li class="nav">
+                            {if condition='$cate.pid eq 0 && $cate.show_nav eq 1'}
+                            <a href="{:url('cate/index',array('id'=>$cate.id))}" class="O-nav">{$cate.cate_name}</a>
+                            {/if}
+                        </li>
+                        {if condition="$cate['children']"}
+                            <ul class="nav-2">
+                            {volist name="$cate.children" id="cateChild"}
+                                <li><a href="{:url('cate/index',array('id'=>$cateChild.id))}">{$cateChild.cate_name}</a></li>
+                                {/volist}
+                            </ul>
+                        {/if}
+                        </li>
+                        {/volist}
+                    </ul>
+
+                </div>
+            </div>
+            <div class="hide-on-med-and-down" style="height: 100px"></div>
+            <!-- 手机显示 -->
+            <div class="hide-on-large-only tou">
+                <div class="Name">安阳市妇幼保健院</div>
+                <div id="top_icon">
+                    <a class="button-collapse waves-effect waves-light" data-activates="slide-out" id="menu_open">
+                        <i class="samll material-icons" style="color: #212020;">menu</i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="clearfix"></div>
+        </div>
+    </header>
+    <!--电脑轮播-->
+    <div class="swiper-container demo1">
+        <div class="swiper-wrapper">
+            <a class="swiper-slide">
+                <img src="__index__/image/banner(1).png" alt="" class="hide-on-small-only" />
+            </a>
+            <a class="swiper-slide">
+                <img src="__index__/image/banner(2).png" alt="" class="hide-on-small-only" />
+            </a>
+            <a class="swiper-slide">
+                <img src="__index__/image/banner(3).png" alt="" class="hide-on-small-only" />
+            </a>
+        </div>
+        <div class="swiper-pagination"></div>
+        <!--&lt;!&ndash; Add Arrows &ndash;&gt;-->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    <!--手机轮播-->
+    <div class="swiper-container demo2">
+        <div class="swiper-wrapper">
+            <a class="swiper-slide" title="">
+                <img src="__index__/image/banner(1).png" alt="" class="hide-on-med-and-up" />
+            </a>
+            <a class="swiper-slide" title="">
+                <img src="__index__/image/banner(2).png" alt="" class="hide-on-med-and-up" />
+            </a>
+            <a class="swiper-slide" title="">
+                <img src="__index__/image/banner(3).png" alt="" class="hide-on-med-and-up" />
+            </a>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <!--导航栏-->
+    <!--<div class="hide-on-med-and-down">-->
+    <div>
+        <div class="daohang">
+            <a class="lanmu">
+                <div class="correct"><i class="icon-01"></i><span>预约挂号</span></div>
+                <div class="opposite"><i class="icon-1"></i><span>预约挂号</span></div>
+            </a>
+            <a class="lanmu">
+                <div class="correct"><i class="icon-02"></i><span>联系我们</span></div>
+                <div class="opposite"><i class="icon-2"></i><span>联系我们</span></div>
+            </a>
+            <a class="lanmu">
+                <div class="correct"><i class="icon-03"></i><span>门诊就诊指南</span></div>
+                <div class="opposite"><i class="icon-3"></i><span>门诊就诊指南</span></div>
+            </a>
+            <a class="lanmu">
+                <div class="correct"><i class="icon-04"></i><span>住院就诊指南</span></div>
+                <div class="opposite"><i class="icon-4"></i><span>住院就诊指南</span></div>
+            </a>
+            <a class="lanmu">
+                <div class="correct"><i class="icon-05"></i><span>内网登录</span></div>
+                <div class="opposite"><i class="icon-5"></i><span>内网登录</span></div>
+            </a>
+            <a class="lanmu">
+                <div class="correct"><i class="icon-06"></i><span>院长信箱</span></div>
+                <div class="opposite"><i class="icon-6"></i><span>院长信箱</span></div>
+            </a>
+            <a class="lanmu">
+                <div class="correct"><i class="icon-07"></i><span>农合医保</span></div>
+                <div class="opposite"><i class="icon-7"></i><span>农合医保</span></div>
+            </a>
+            <a class="lanmu">
+                <div class="correct"><i class="icon-08"></i><span>院区分布</span></div>
+                <div class="opposite"><i class="icon-8"></i><span>院区分布</span></div>
+            </a>
+            <a class="lanmu">
+                <div class="correct"><i class="icon-09"></i><span>资料下载</span></div>
+                <div class="opposite"><i class="icon-9"></i><span>资料下载</span></div>
+            </a>
+        </div>
+    </div>
+    <!--广告通知-->
+    <div class="tab hide-on-small-only wow bounceIn">
+        <ul class="tab-nav">
+            <li class="actived"> <a href="javascript:;">新闻资讯</a> </li>
+            <li> <a href="javascript:;">通知公告</a> </li>
+        </ul>
+        <div class="content-wrap clearfix">
+            <div class="content-item current">
+                <a href="#" class="tu4">
+                    <div style="background: url('__index__/image/tu4-0.png') no-repeat center center;background-size: cover;"></div>
+                    <p class="omit">我院成立于1987年的哪一个火辣辣的夏天</p>
+                    <span>查看详情</span>
+                </a>
+                <a href="#" class="tu4">
+                    <div style="background: url('__index__/image/tu4-0.png') no-repeat center center;background-size: cover;"></div>
+                    <p class="omit">我院成立于1987年的哪一个火辣辣的夏天</p>
+                    <span>查看详情</span>
+                </a>
+                <a href="#" class="tu4">
+                    <div style="background: url('__index__/image/tu4-0.png') no-repeat center center;background-size: cover;"></div>
+                    <p class="omit">我院成立于1987年的哪一个火辣辣的夏天</p>
+                    <span>查看详情</span>
+                </a>
+                <a href="#" class="tu4">
+                    <div style="background: url('__index__/image/tu4-0.png') no-repeat center center;background-size: cover;"></div>
+                    <p class="omit">我院成立于1987年的哪一个火辣辣的夏天</p>
+                    <span>查看详情</span>
+                </a>
+                <!--<p class="clearfix"></p>-->
+                <div class="CK"><a href="#">查看更多</a></div>
+            </div>
+            <div class="content-item">
+                <div class="tonggao">
+                    <div class="Zbox">
+                        <div>
+                            <div class="Znews">
+                                <div class="Ztime">
+                                    <p class="Zday">05</p>
+                                    <p class="Zdays">2019/06</p>
+                                </div>
+                                <div class="Zxin">
+                                    <p class="Ztitle omit">安阳市妇保安阳市妇保安阳市妇保安阳市妇保安阳市妇保安阳市妇保安阳市妇保</p>
+                                    <p class="Zdeta">公司某年某月，此处php现在文字个数 公司某年某月，此处php现在文字个数公司某年某月，此处php现在文字个数公司某年某月，此处php现在文字个数...<a href="#">查看详情</a></p>
+                                </div>
+                            </div>
+                            <ul class="Zlist">
+                                <li><a href="#">再者说这是一条广告</a></li>
+                                <li><a href="#">再者说这是一条广告</a></li>
+                                <li><a href="#">再者说这是一条广告</a></li>
+                            </ul>
+                            <a href="#" class="Zgeng">查看更多公告</a>
+                        </div>
+                        <div class="Zimg">
+                            <img src="__index__/image/tonggao.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--广告通知-手机-->
+    <div class="wow bounceIn hide-on-large-only">
+        <div class="Rexpert-0">专家介绍</div>
+        <div class="tab2 wow bounceIn">
+            <ul class="tab-nav clearfix">
+                <li class="actived"> <a href="javascript:;">新闻资讯</a> </li>
+                <li> <a href="javascript:;">通知公告</a> </li>
+            </ul>
+            <div class="content-wrap clearfix">
+                <div class="content-item current">
+                    <a href="#" class="Rxuan">
+                        <img src="image/erweima.png" alt="">
+                        <div>
+                            <p>这是标题</p>
+                            <p class="omit2">这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容</p>
+                        </div>
+                    </a>
+                    <a href="#" class="Rxuan">
+                        <img src="image/erweima.png" alt="">
+                        <div>
+                            <p>这是标题</p>
+                            <p class="omit2">这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="content-item Rtong">
+                    <a href="#" class="omit">这是通知公告</a>
+                    <a href="#" class="omit">这是通知公告</a>
+                    <a href="#" class="omit">这是通知公告</a>
+                    <a href="#" class="omit">这是通知公告</a>
+                    <a href="#" class="omit">这是通知公告这是通知公告这是通知公告这是通知公告</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--特色专科-->
+    <div class="section wow bounceIn">
+        <div class="SSS">
+            <h1 class="Te">特色专科</h1>
+            <div class="Departments clearfix">
+                <a href="#"><i class="icon-r1"></i><p>儿内呼吸科</p></a>
+                <a href="#"><i class="icon-r2"></i><p>新生儿科</p></a>
+                <a href="#"><i class="icon-r3"></i><p>儿童神经康复科</p></a>
+                <a href="#"><i class="icon-r4"></i><p>儿外科</p></a>
+                <a href="#"><i class="icon-r5"></i><p>儿童重症监护室</p></a>
+                <a href="#"><i class="icon-r6"></i><p>生理产科</p></a>
+                <a href="#"><i class="icon-r7"></i><p>病理产科</p></a>
+                <a href="#"><i class="icon-r8"></i><p>妇科</p></a>
+                <a href="#"><i class="icon-r9"></i><p>产房</p></a>
+                <a href="#"><i class="icon-r0"></i><p>妇产重症监护室</p></a>
+            </div>
+            <div class="CK2"><a href="#">查看更多</a></div>
+            <div class="Doctor"><img src="__index__/image/Doctor.png" alt=""></div>
+        </div>
+    </div>
+    <!--特色专科-手机-->
+    <div class="wow bounceIn hide-on-large-only ">
+        <div class="Rexpert-0">特色专科</div>
+        <div class="Rsection clearfix">
+            <a href="#"><i class="icon-r1"></i><p>儿内呼吸科</p></a>
+            <a href="#"><i class="icon-r2"></i><p>新生儿科</p></a>
+            <a href="#"><i class="icon-r3"></i><p>儿童神经康复科</p></a>
+            <a href="#"><i class="icon-r4"></i><p>儿外科</p></a>
+            <a href="#"><i class="icon-r5"></i><p>儿童重症监护室</p></a>
+            <a href="#"><i class="icon-r6"></i><p>生理产科</p></a>
+            <a href="#"><i class="icon-r7"></i><p>病理产科</p></a>
+            <a href="#"><i class="icon-r8"></i><p>妇科</p></a>
+            <a href="#"><i class="icon-r9"></i><p>产房</p></a>
+            <a href="#"><i class="icon-r0"></i><p>妇产重症监护室</p></a>
+        </div>
+    </div>
+    <!--专家介绍-->
+    <div class="wow bounceIn expert">
+        <div class="SSS por">
+            <h1 class="Jie">专家介绍</h1>
+            <div class="expert-0">
+                <ul class="expert-1">
+                    <li class="XZ">儿内科</li>
+                    <li>妇产科</li>
+                    <li>乳腺科</li>
+                    <li>生殖遗传</li>
+                    <li>耳鼻喉科</li>
+                    <li>保健部</li>
+                    <li>儿外科</li>
+                    <li>口腔科</li>
+                    <li>医技辅助</li>
+                    <li>更多专家 +</li>
+                </ul>
+                <div class="swiper-container demo3">
+                    <div class="swiper-wrapper">
+                        <a href="#" class="swiper-slide">
+                            <img src="__index__/image/expert-1.png" alt="" class="" />
+                            <p>李丽英(副主任医师)</p>
+                        </a>
+                        <a href="#" class="swiper-slide">
+                            <img src="__index__/image/expert-1.png" alt="" class="" />
+                            <p>李丽英(副主任医师)</p>
+                        </a>
+                        <a href="#" class="swiper-slide">
+                            <img src="__index__/image/expert-1.png" alt="" class="" />
+                            <p>李丽英(副主任医师)</p>
+                        </a>
+                        <a href="#" class="swiper-slide">
+                            <img src="__index__/image/expert-1.png" alt="" class="" />
+                            <p>李丽英(副主任医师)</p>
+                        </a>
+                        <a href="#" class="swiper-slide">
+                            <img src="__index__/image/expert-1.png" alt="" class="" />
+                            <p>李丽英(副主任医师)</p>
+                        </a>
+                        <a href="#" class="swiper-slide">
+                            <img src="__index__/image/expert-1.png" alt="" class="" />
+                            <p>李丽英(副主任医师)</p>
+                        </a>
+                        <a href="#" class="swiper-slide">
+                            <img src="__index__/image/expert-1.png" alt="" class="" />
+                            <p>李丽英(副主任医师)</p>
+                        </a>
+                        <a href="#" class="swiper-slide">
+                            <img src="__index__/image/expert-1.png" alt="" class="" />
+                            <p>李丽英(副主任医师)</p>
+                        </a>
+                    </div>
+                    <!--<div class="swiper-pagination"></div>-->
+                    <!--&lt;!&ndash; Add Arrows &ndash;&gt;-->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--专家介绍-手机-->
+    <div class="wow bounceIn hide-on-large-only Rexpert">
+        <div class="Rexpert-0">专家介绍</div>
+        <div class="clearfix por">
+            <ul class="Rexpert-1">
+                <li class="XZ">儿内科</li>
+                <li>妇产科</li>
+                <li>乳腺科</li>
+                <li>生殖遗传</li>
+                <li>耳鼻喉科</li>
+                <li>保健部</li>
+                <li>儿外科</li>
+                <li>口腔科</li>
+                <li>医技辅助</li>
+                <li>更多专家 +</li>
+            </ul>
+            <ul class="Rexpert-2">
+                <li>李丽英(副主任医师副主任医师副主任医师副主任医师副主任医师副主任医师)</li>
+                <li>李丽英(副主任医师)</li>
+                <li>李丽英(副主任医师)</li>
+                <li>李丽英(副主任医师)</li>
+                <li>李丽英(副主任医师)</li>
+                <li>李丽英(副主任医师)</li>
+                <li>李丽英(副主任医师)</li>
+                <li>李丽英(副主任医师)</li>
+                <li>李丽英(副主任医师)</li>
+                <li>李丽英(副主任医师)</li>
+                <li>李丽英(副主任医师)</li>
+                <li>李丽英(副主任医师)</li>
+                <li>李丽英(副主任医师)</li>
+                <li>李丽英(副主任医师)</li>
+                <li>李丽英(副主任医师)</li>
+                <li>李丽英(副主任医师)</li>
+                <li>李丽英(副主任医师)</li>
+                <li>李丽英(副主任医师)</li>
+                <li>李丽英(副主任医师)</li>
+                <li>李丽英(副主任医师)</li>
+            </ul>
+        </div>
+    </div>
+    <!--专家坐诊-->
+    <div class="wow bounceIn zuozhen">
+        <div class="SSS por">
+            <h1 class="Jie">专家坐诊</h1>
+            <div class="zuozhen-0">
+                <div class="zuozhen-3"></div>
+                <ul class="zuozhen-1" id="keshi">
+                    <li class="XZ">儿内科</li>
+                    <li>妇产科</li>
+                    <li>乳腺科</li>
+                    <li>生殖遗传</li>
+                    <li>耳鼻喉科</li>
+                    <li>保健部</li>
+                    <li>儿外科</li>
+                    <li>口腔科</li>
+                    <li>医技辅助</li>
+                </ul>
+                <div class="zuozhen-2">
+                    <div class="Xline clearfix">
+                        <p></p>
+                        <p>周一</p>
+                        <p>周二</p>
+                        <p>周三</p>
+                        <p>周四</p>
+                        <p>周五</p>
+                        <p>周六</p>
+                        <p>周日</p>
+                    </div>
+                    <div class="clearfix">
+                        <div class="Xlist">
+                            <p>上午</p>
+                            <p>下午</p>
+                        </div>
+                        <div class="Xyisheng" id="xcon">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--专家坐诊-手机-->
+    <div class="wow bounceIn hide-on-large-only">
+        <div class="Rexpert-0">专家坐诊</div>
+        <div class="clearfix por">
+            <ul class="Rexpert-1">
+                <li class="XZ">儿内科</li>
+                <li>妇产科</li>
+                <li>乳腺科</li>
+                <li>生殖遗传</li>
+                <li>耳鼻喉科</li>
+                <li>保健部</li>
+                <li>儿外科</li>
+                <li>口腔科</li>
+                <li>医技辅助</li>
+            </ul>
+            <div class="Rzuozhen-2">
+                <div class="Rzuozhen-line clearfix">
+                    <p></p>
+                    <p>上午</p>
+                    <p>下午</p>
+                </div>
+                <div class="Rzuozhen-por">
+                    <div class="Rzuozhen-list">
+                        <p>周一</p>
+                        <p>周二</p>
+                        <p>周三</p>
+                        <p>周四</p>
+                        <p>周五</p>
+                        <p>周六</p>
+                        <p>周日</p>
+                    </div>
+                    <div class="RXyisheng">
+                        <p>
+                            <a href="#">李丽英</a>
+                            <a href="#">李丽英</a>
+                            <a href="#">李丽英</a>
+                            <a href="#">李丽英</a>
+                            <a href="#">李丽英</a>
+                        </p>
+                        <p>
+                            <a href="#">李丽英</a>
+                            <a href="#">李丽英</a></p>
+                        <p>
+                            <a href="#">李丽英</a>
+                            <a href="#">李丽英</a>
+                        </p>
+                        <p>
+                            <a href="#">李丽英</a>
+                            <a href="#">李丽英</a>
+                        </p>
+                        <p>
+                            <a href="#">李丽英</a>
+                            <a href="#">李丽英</a>
+                        </p>
+                        <p>
+                            <a href="#">李丽英</a>
+                            <a href="#">李丽英</a>
+                        </p>
+                        <p>
+                            <a href="#">李丽英</a>
+                            <a href="#">李丽英</a>
+                        </p>
+                        <p>
+                            <a href="#">李丽英</a>
+                            <a href="#">李丽英</a>
+                        </p>
+                        <p>
+                            <a href="#">李丽英</a>
+                            <a href="#">李丽英</a>
+                        </p>
+                        <p>
+                            <a href="#">李丽英</a>
+                            <a href="#">李丽英</a>
+                        </p>
+                        <p>
+                            <a href="#">李丽英</a>
+                            <a href="#">李丽英</a>
+                        </p>
+                        <p>
+                            <a href="#">李丽英</a>
+                            <a href="#">李丽英</a>
+                        </p>
+                        <p>
+                            <a href="#">李丽英</a>
+                            <a href="#">李丽英</a>
+                        </p>
+                        <p>
+                            <a href="#">李丽英</a>
+                            <a href="#">李丽英</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var keshi =0;
+        $(function(){
+            console.log(keshi);
+            keshi =  0
+            var url="{:url('index/reg')}";
+            $.ajax({
+                url:url,
+                type:'POST', //GET
+                async:true,    //或false,是否异步
+                data:{
+                    keshi:keshi,
+                    age:22
+
+                },
+                timeout:500,    //超时时间
+                dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+
+                success:function(data){
+                    console.log(data);
+                    $('#xcon').empty().append(data);
+
+
+                },
+
+            })
+        })
+
+        $('#keshi li').click(function(){
+            // $('#xcon').html('');
+            keshi =  $(this).index();
+            var url="{:url('index/reg')}";
+            $.ajax({
+                url:url,
+                type:'POST', //GET
+                async:true,    //或false,是否异步
+                data:{
+                    keshi:keshi,
+
+
+                },
+                timeout:500,    //超时时间
+                dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+
+                success:function(data){
+                    console.log(data);
+                    $('#xcon').empty().append(data);
+
+
+                },
+
+            })
+            // })
+
+        })
+
+
+
+    </script>
+    <!--宣传图-->
+    <div class="wow bounceIn Leaflets">
+        <div class="LeafletsImg">
+            <div style="background: url(image/Leaflets-1.png) no-repeat center;background-size: cover;"><a href="#" style="background-color: #FD4464;">健康教育 +</a></div>
+            <div style="background-color: #FD4464">
+                <ul class="leaflets-T">
+                    <li><a href="#">宣传图宣传图宣传图宣传图宣传图宣传图</a></li>
+                    <li><a href="#">宣传图宣传图宣传图宣传图宣传图宣传图</a></li>
+                    <li><a href="#">宣传图宣传图宣传图宣传图宣传图宣传图</a></li>
+                    <li><a href="#">宣传图宣传图宣传图宣传图宣传图宣传图</a></li>
+                </ul>
+            </div>
+            <div style="background: url(image/Leaflets-1.png) no-repeat center;background-size: cover;"><a href="#" style="background-color: #F99E00;">医护园地 +</a></div>
+            <div style="background-color: #F99E00">
+                <ul class="leaflets-T">
+                    <li><a href="#">宣传图宣传图宣传图宣传图宣传图宣传图</a></li>
+                    <li><a href="#">宣传图宣传图宣传图宣传图宣传图宣传图</a></li>
+                    <li><a href="#">宣传图宣传图宣传图宣传图宣传图宣传图</a></li>
+                    <li><a href="#">宣传图宣传图宣传图宣传图宣传图宣传图</a></li>
+                    <li><a href="#">宣传图宣传图宣传图宣传图宣传图宣传图</a></li>
+                    <li><a href="#">宣传图宣传图宣传图宣传图宣传图宣传图</a></li>
+                </ul>
+            </div>
+            <div style="background: url(image/Leaflets-1.png) no-repeat center;background-size: cover;"><a href="#" style="background-color: #17BF84;">学科建设 +</a></div>
+            <div style="background-color: #17BF84">
+                <ul class="leaflets-T">
+                    <li><a href="#">宣传图宣传图宣传图宣传图宣传图宣传图</a></li>
+                    <li><a href="#">宣传图宣传图宣传图宣传图宣传图宣传图</a></li>
+                    <li><a href="#">宣传图宣传图宣传图宣传图宣传图宣传图</a></li>
+                    <li><a href="#">宣传图宣传图宣传图宣传图宣传图宣传图</a></li>
+                </ul>
+            </div>
+            <div style="background: url(image/Leaflets-1.png) no-repeat center;background-size: cover;"><a href="#" style="background-color: #768DFD;">护患心声 +</a></div>
+            <div style="background-color: #768DFD">
+                <ul class="leaflets-T">
+                    <li><a href="#">宣传图宣传图宣传图宣传图宣传图宣传图</a></li>
+                    <li><a href="#">宣传图宣传图宣传图宣传图宣传图宣传图</a></li>
+                    <li><a href="#">宣传图宣传图宣传图宣传图宣传图宣传图</a></li>
+                    <li><a href="#">宣传图宣传图宣传图宣传图宣传图宣传图</a></li>
+                </ul>
+            </div>
+            <div style="background: url(image/Leaflets-1.png) no-repeat center;background-size: cover;"><a href="#" style="background-color: #A970FB;">政策解读 +</a></div>
+            <div style="background-color: #A970FB">
+                <ul class="leaflets-T">
+                    <li><a href="#">宣传图宣传图宣传图宣传图宣传图宣传图</a></li>
+                    <li><a href="#">宣传图宣传图宣传图宣传图宣传图宣传图</a></li>
+                    <li><a href="#">宣传图宣传图宣传图宣传图宣传图宣传图</a></li>
+                    <li><a href="#">宣传图宣传图宣传图宣传图宣传图宣传图</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="LeafletsTxt">
+            <a href="#">
+                <img src="__index__/image/LeafletsTxt-1.png" alt=""><p>院报在线阅读</p>
+            </a>
+            <a href="#">
+                <img src="__index__/image/LeafletsTxt-2.png" alt=""><p>院报在线阅读</p>
+            </a>
+            <a href="#">
+                <img src="__index__/image/LeafletsTxt-3.png" alt=""><p>院报在线阅读</p>
+            </a>
+        </div>
+    </div>
+    <!--底部导航栏-->
+    <div class="BottomBar">
+        <div class="bar">
+            <div class="clearfix">
+                <a href="#">首页</a>
+                <a href="#">医院概况</a>
+                <a href="#">新闻中心</a>
+                <a href="#">特色专科</a>
+                <a href="#">专家介绍</a>
+                <a href="#">就诊指南</a>
+                <a href="#">医院文化</a>
+                <a href="#">党团建设</a>
+                <a href="#">院务公开</a>
+            </div>
+        </div>
+        <div class="BottomBar-1">
+            <div class="BottomXin">
+                <div><img src="__index__/image/erweima.png" alt=""></div>
+                <ul>
+                    <li>地址:河南省安阳市解放大道92号</li>
+                    <li>联系电话:0372-3285209</li>
+                    <li>乘车路线:市内可乘1路、11路、37路、38路公交到达</li>
+                    <li>友情链接:趣医网安阳市妇幼保健院</li>
+                    <li>豫ICP备13018883号</li>
+                </ul>
+            </div>
+            <div class="BottomMing">
+                <div>服务声明：本网站旨在提供医患互动交流平台，问题回答结果建议性内容，不能作为诊断医疗的依据！</div>
+                <div>上班时间：    上午8:00~12：00 下午14:30~17:30    急诊科实行全年24小时开放就诊（节假日正常）</div>
+            </div>
+        </div>
+        <div class="Copyright">Copyright(C) 2014 All Rights Reserved www.ayfy.com.cn 版权所有 严禁转载！技术支持：河南相映红信息技术有限公司</div>
+    </div>
+    <script src="__index__/js/swiper.js"></script>
+    <script>
+        // <!--swiper 轮播 -->
+        var swiper1 = new Swiper('.demo1', {
+            pagination: {
+                el: '.swiper-pagination',
+                dynamicBullets: true,
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+        var swiper2 = new Swiper('.demo2', {
+            pagination: {
+                el: '.swiper-pagination',
+                dynamicBullets: true,
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+        });
+        var swiper3 = new Swiper('.demo3', {
+            slidesPerView : 5,
+            spaceBetween : 10,
+            loop : true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+    <!--导航栏翻转-->
+    <script>
+        $(function(){
+            $(".lanmu").hover(function(){
+                $(this).find(".correct").removeClass("test");
+                $(this).find(".opposite").removeClass('test2');
+                $(this).find(".correct").addClass("test2");
+                $(this).find(".opposite").addClass('test');
+            },function(){
+                $(this).find(".correct").removeClass("test2");
+                $(this).find(".opposite").removeClass("test");
+                $(this).find(".correct").addClass("test");
+                $(this).find(".opposite").addClass('test2');
+            });
+        });
+    </script>
+    <!--tab切换-->
+    <script>
+        $(window).ready(function() {
+            $('.tab').tabChange({
+                name: '.tab',
+                invoke: 0,
+                behavior: 'click',
+                effect:'fade'
+            });
+            $('.tab2').tabChange({
+                name: '.tab2',
+                invoke: 0,
+                behavior: 'click',
+                effect:'fade'
+            });
+        })
+    </script>
+    <!--XZ样式-->
+    <script>
+        $('.expert-1 li,.zuozhen-1 li,.Rexpert-1 li').click(function(){
+            $(this).addClass('XZ').siblings().removeClass('XZ');
+        })
+    </script>
+</body>
+</html>

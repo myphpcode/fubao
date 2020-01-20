@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0, maximum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>安阳妇幼__专家介绍</title>
+    <link rel="stylesheet" href="__index__/css/animate.css">
+    <link rel="stylesheet" href="__index__/css/style.css"/>
+    <link rel="stylesheet" href="__index__/css/materialize.css"/>
+    <link rel="stylesheet" href="__index__/css/swiper.css">
+    <link rel="stylesheet" href="__index__/fonts/fonts.css">
+    <script src="__index__/js/jquery-3.3.1.js"></script>
+    <script src="__index__/js/materialize.js"></script>
+    <script type="text/javascript" src="__index__/js/tab.js"></script>
+    <script src="__index__/js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <!--<style>-->
+    <!--#yscon a{-->
+    <!--width: 19%;-->
+    <!--}-->
+    <!--#yscon a:not(:first-child){-->
+    <!--margin-left: 1%;-->
+    <!--}-->
+    <!--</style>-->
+</head>
+<body>
+{include file="common/head"}
+<div class="Wwhole"><img src="__index__/image/Wwhole.jpg" alt=""></div>
+<div class="Wbox por container">
+    <div class="row">
+        <div class="Wtab wow bounceIn col s12 m12 l9 xl10">
+            <ul class="clearfix">
+                <li class="actived">专家介绍</li>
+
+            </ul>
+            <div class="content-wrap">
+                <div class="Wnei row Wyisheng" style="align-items: stretch;">
+                    <div class="col s4 m2 l2 xl2" style="margin-right: 1rem;"><img style="border: 1px solid #ccc;
+    padding: .6rem; margin: 0" src="/static/uploads/{$doc.pic_url}" alt=""></div>
+                    <div class="WneiD col s8 m10 l10 xl10">
+                        <p class="Wjieshao">姓名：{$doc.name}</p>
+                        <p class="Wjieshao">职务：{$doc.ranks}</p>
+                        <p class="Wjieshao">擅长：{$doc.skilled}</p>
+                        <p class="Wjieshao">简介：{$doc.intro}</p>
+                    </div>
+                </div>
+                <div class="Whua" style="margin-bottom: 2rem;">
+                    <div class="Wshijian">
+                        <div class="Xline clearfix">
+                            <p></p>
+                            <p>周一</p>
+                            <p>周二</p>
+                            <p>周三</p>
+                            <p>周四</p>
+                            <p>周五</p>
+                            <p>周六</p>
+                            <p>周日</p>
+                        </div>
+                        <div class="clearfix">
+                            <div class="Xlist">
+                                <p>上午</p>
+                                <p>下午</p>
+                            </div>
+                            <div class="Xyisheng">
+                               {$schedule}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix Wtousu">
+                    <div>
+                        <p style="margin-bottom: 20px;font-weight: bold;">咨询医生</p>
+                    </div>
+                    <div class="clearfix">
+                        <p>您的姓名</p>
+                        <input type="text" maxlength="16">
+                    </div>
+                    <!--<div class="clearfix">-->
+                    <!--<p>联系方式</p>-->
+                    <!--<input type="text" maxlength="16">-->
+                    <!--</div>-->
+                    <div class="clearfix">
+                        <p>咨询内容</p>
+                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="clearfix">
+                        <p>验证码</p>
+                        <span><img src="" alt=""></span>
+                    </div>
+                    <div class="Wtousu-1"><a href="#">发布咨询</a></div>
+                </div>
+                <div class="row WReply">
+                    <div class="WReplyLetter">
+                        <div class="WReplyName">
+                            <i class="iconReply"></i><p>患者<span class="color-F46">黎**</span>的留言</p>
+                        </div>
+                        <p class="WReplyTime">{$data.time|default=time()|date='Y-m-d',###}</p>
+                    </div>
+                    <div class="WReplyTxt">
+                        <div  class="WReplyMain">留言1</div>
+                        <div class="WReplyVice">
+                            <div class="WReplyVice-1">
+                                <p>医生<i class="color-F3A">回复</i>：</p>
+                                <p>{$data.time|default=time()|date='Y-m-d',###}
+                                </p>
+                            </div>
+                            <p class="WReplyVice-2">回复1</p>
+                        </div>
+                    </div>
+                    <div class="WReplyInput">
+                        <i>回复：</i><input type="text" placeholder="请输入需要咨询内容">
+                    </div>
+                </div>
+                <div class="row WReply">
+                    <div class="WReplyLetter">
+                        <div class="WReplyName">
+                            <i class="iconReply"></i><p>患者<span class="color-F46">黎**</span>的留言</p>
+                        </div>
+                        <p class="WReplyTime">{$data.time|default=time()|date='Y-m-d',###}</p>
+                    </div>
+                    <div class="WReplyTxt">
+                        <div  class="WReplyMain">留言2</div>
+                        <div class="WReplyVice">
+                            <div class="WReplyVice-1">
+                                <p>医生<i class="color-F3A">回复</i>：</p>
+                                <p>{$data.time|default=time()|date='Y-m-d',###}</p>
+                            </div>
+                            <p class="WReplyVice-2">回复2</p>
+                        </div>
+                    </div>
+                    <div class="WReplyInput">
+                        <i>回复：</i><input type="text" placeholder="请输入需要咨询内容">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--右侧-->
+    <!--{include file="common/right"}-->
+
+    <div class="Tongke hide-on-med-and-down wow bounceIn">
+        <div class="Tongke-1">同科室其他医生</div>
+        {volist name="tdoc" id="vo"}
+        <a class="Tongke-2" href="{:url('index/doctor/index',array('id'=>$vo['id']))}">
+            <div class="Tongke-3"><i>{$vo.name}</i><span>{$vo.ranks}</span></div>
+            <p class="Tongke-4 omit2"><i>擅长:</i>{$vo.skilled|substr=0,100}</p>
+        </a>
+         {/volist}
+        <div class="Tongke-5"><a href="{:url('index/doctor/lst',array('department'=>$tdoc[0]['department']))}">查看更多</a></div>
+    </div>
+</div>
+<!--底部导航栏-->
+{include file="common/footer"}
+<form method="post" action="{:url('index/doctor/yuyue')}" id="yuyue">
+<div class="TPopup">
+    <div class="Tlayer"></div>
+    <div class="Tcontent">
+        <div class="clearfix Wtousu">
+            <div class="clearfix yisheng">
+                <p>预约医生</p>
+                <input type="text" value="" readonly="true" name="doctor">
+            </div>
+            <div class="clearfix shijian">
+                <p>预约时间</p>
+                <input type="text" value="" readonly="true" name="yytime">
+            </div>
+            <div class="clearfix">
+                <p>姓名</p>
+                <input type="text" maxlength="16" name="name">
+            </div>
+            <div class="clearfix">
+                <p>电话</p>
+                <input type="text" maxlength="16" name="mobile">
+            </div>
+            <div class="clearfix">
+                <p>病情描述</p>
+                <textarea cols="30" rows="10" name="symptom"></textarea>
+            </div>
+            <div class="clearfix">
+                <p>验证码</p>
+                <input style="display: inline;width: 25%;" type="text" name="code" class="pass-text-input " placeholder="请输入验证码">
+                <b style="float: left;    height: 2.4rem;    width: 7.7rem;    margin-left: 1rem;    overflow: hidden;">{:captcha_img()}</b>
+                <!--<img src="{:captcha_src()}" alt="captcha" />-->
+            </div>
+            <div class="Tcontent-1 clearfix"><i  onclick="but()">预约</i> <i class="Tguanbi">关闭</i></div>
+        </div>
+    </div>
+</div>
+</form>
+
+<script>
+    $(window).ready(function() {
+        var nana = "{$doc.name}";
+        var shi = "";
+        var VVV = ""
+        $(".Xyisheng p a").click(function(){
+            var HTIme = $(this).attr("data-time");
+            var Hab = HTIme.charAt(HTIme.length-1);
+            var H = HTIme.substring(0,HTIme.length-1);
+            if(H==0){
+                H=7
+                VVV = $(".Xline p").eq(H).children(":first").html();
+            }else {
+                VVV = $(".Xline p").eq(H).children(":first").html();
+            }
+
+
+            // 周
+            switch (H){
+                case "01":
+                    shi = "周一";
+                    break;
+                case "02":
+                    shi = "周二";
+                    break;
+                case "03":
+                    shi = "周三";
+                    break;
+                case "04":
+                    shi = "周四";
+                    break;
+                case "05":
+                    shi = "周五";
+                    break;
+                case "06":
+                    shi = "周六";
+                    break;
+                case "07":
+                    shi = "周日";
+                    break;
+            }
+            // 下
+            switch (Hab) {
+                case "a":
+                    shi += " / 上午"
+                    break;
+                case "b":
+                    shi += "/ 下午"
+                    break;
+            }
+
+            $(".TPopup").show();
+            $(".Tcontent .yisheng input").val(nana);
+            $(".Tcontent .shijian input").val(VVV+" / "+shi);
+            // $(".Tcontent .shijian input").attr("value",HTIme);
+
+        })
+        $(".Tguanbi,.Tlayer").click(function(){
+            $(".TPopup").hide();
+        })
+    })
+    function but(){
+        // $("#yuyue").submit();
+      $.ajax({
+            //几个参数需要注意一下
+            type: "POST",//方法类型
+            dataType: "json",//预期服务器返回的数据类型
+            url: "{:url('index/doctor/yuyue')}",//
+            data: $('#yuyue').serialize(),//from表单 的id="login"
+            success: function (data) {
+               alert(data);
+                // $(".TPopup").hide();
+                // location.reload();//刷新页面
+            },
+            error : function() {
+                alert(data);
+                // location.reload();//刷新页面
+            }
+        });
+
+    }
+
+
+
+</script>
+<script>
+    //获取系统当前时间
+    var now = new Date();
+    var nowTime = now.getTime() ;
+    var oneDayTime = 24*60*60*1000 ;
+    var c = 0;
+    for(var i = -1 ; i < 7 ; i++){
+        //显示周一
+        var ShowTime = nowTime + (i+1)*oneDayTime ;
+        //初始化日期时间
+        var myDate = new Date(ShowTime);
+        var year=myDate.getFullYear();
+        var month=myDate.getMonth()+1;
+        var date=myDate.getDate();
+        var str = "星期" + "日一二三四五六".charAt(myDate.getDay());
+        var html = ""
+        html+="<i>"+month+"-"+date+"</i>" +
+            "<i>"+str+"</i>"
+        // console.log(html)
+        $(".Xline p").eq(c).html(html);
+        c ++;
+    }
+</script>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0, maximum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>安阳妇幼</title>
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/materialize.css"/>
+    <link rel="stylesheet" href="css/swiper.css">
+    <link rel="stylesheet" href="fonts/fonts.css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/materialize.js"></script>
+    <script type="text/javascript" src="js/tab.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+</head>
+<body>
+<!--首栏目-->
+<nav class="nav-extended">
+    <div id="slide-out" class="side-nav collapsible" data-collapsible="accordion">
+        <p class="Collapsing current">首页</p>
+        <p class="Collapsing current">医院概况</p>
+        <div class="coll_body">
+            <a href="#">语文</a>
+            <a href="#">数学</a>
+            <a href="#">英语</a>
+            <a href="#">科学</a>
+        </div>
+        <p class="Collapsing current">新闻中心</p>
+        <div class="coll_body">
+            <a href="#">语文</a>
+            <a href="#">数学</a>
+            <a href="#">英语</a>
+            <a href="#">科学</a>
+        </div>
+        <p class="Collapsing current">特色专科</p>
+        <div class="coll_body">
+            <a href="#">语文</a>
+            <a href="#">数学</a>
+            <a href="#">英语</a>
+            <a href="#">科学</a>
+        </div>
+        <p class="Collapsing current">专家介绍</p>
+        <div class="coll_body">
+            <a href="#">语文</a>
+            <a href="#">数学</a>
+            <a href="#">英语</a>
+            <a href="#">科学</a>
+        </div>
+        <p class="Collapsing current">就诊指南</p>
+        <div class="coll_body">
+            <a href="#">语文</a>
+            <a href="#">数学</a>
+            <a href="#">英语</a>
+            <a href="#">科学</a>
+        </div>
+        <p class="Collapsing current">医院文化</p>
+        <div class="coll_body">
+            <a href="#">语文</a>
+            <a href="#">数学</a>
+            <a href="#">英语</a>
+            <a href="#">科学</a>
+        </div>
+        <p class="Collapsing current">党团建设</p>
+        <div class="coll_body">
+            <a href="#">语文</a>
+            <a href="#">数学</a>
+            <a href="#">英语</a>
+            <a href="#">科学</a>
+        </div>
+        <p class="Collapsing current">院务公开</p>
+        <div class="coll_body">
+            <a href="#">语文</a>
+            <a href="#">数学</a>
+            <a href="#">英语</a>
+            <a href="#">科学</a>
+        </div>
+    </div>
+</nav>
+<script>
+    (function($){
+        // 侧边栏
+        $(function(){
+            $('.button-collapse').sideNav({
+                    menuWidth: 300,
+                    edge: 'right',
+                    closeOnClick: true,
+                    draggable: true
+                }
+            );
+        });
+        // 手风琴
+        // $(".coll_body").eq(0).show();
+        $(".Collapsing").click(function(){
+            $(this).next(".coll_body").slideToggle(500).siblings(".coll_body").slideUp(500);
+        });
+    })(jQuery);
+</script>
+<header>
+    <div id="name_box_w">
+        <!--电脑显示 -->
+        <div class="hide-on-med-and-down" style="position: fixed;width: 100%;background-color: #fff;">
+            <div class="Top">
+                <div class="header">
+                    <div class="left">欢迎访问妇科官网！</div>
+                    <div class="right">
+                        <a href="#" class="left">加入收藏</a>
+                        <a href="#" class="left jiange">联系我们</a>
+                        <a href="#" class="left jiange">办公室OA系统</a>
+                        <div class="left weixin jiange">官方微信
+                            <div class="wximg"><i class="sanjiao"></i><img src="image/erweima.png" alt="官方微信"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container ">
+                <ul class="clearfix">
+                    <li class="nav">
+                        <a href="#" class="O-nav">首页</a>
+                    </li>
+                    <li class="nav">
+                        <a href="#" class="O-nav">医院概况</a>
+                        <ul class="nav-2">
+                            <li><a href="#">新闻动态</a></li>
+                            <li><a href="#">新闻动态</a></li>
+                            <li><a href="#">新闻动态</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav">
+                        <a href="#" class="O-nav">新闻中心</a>
+                        <ul class="nav-2">
+                            <li><a href="#">新闻动态</a></li>
+                            <li><a href="#">新闻动态</a></li>
+                            <li><a href="#">新闻动态</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav">
+                        <a href="#" class="O-nav">特色专科</a>
+                        <ul class="nav-2">
+                            <li><a href="#">新闻动态</a></li>
+                            <li><a href="#">新闻动态</a></li>
+                            <li><a href="#">新闻动态</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav">
+                        <a href="#" class="O-nav">专家介绍</a>
+                        <ul class="nav-2">
+                            <li><a href="#">新闻动态</a></li>
+                            <li><a href="#">新闻动态</a></li>
+                            <li><a href="#">新闻动态</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav">
+                        <a href="#" class="O-nav">就诊指南</a>
+                        <ul class="nav-2">
+                            <li><a href="#">新闻动态</a></li>
+                            <li><a href="#">新闻动态</a></li>
+                            <li><a href="#">新闻动态</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav">
+                        <a href="#" class="O-nav">医院文化</a>
+                        <ul class="nav-2">
+                            <li><a href="#">新闻动态</a></li>
+                            <li><a href="#">新闻动态</a></li>
+                            <li><a href="#">新闻动态</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav">
+                        <a href="#" class="O-nav">党团建设</a>
+                        <ul class="nav-2">
+                            <li><a href="#">新闻动态</a></li>
+                            <li><a href="#">新闻动态</a></li>
+                            <li><a href="#">新闻动态</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav">
+                        <a href="#" class="O-nav">院务公开</a>
+                        <ul class="nav-2">
+                            <li><a href="#">新闻动态</a></li>
+                            <li><a href="#">新闻动态</a></li>
+                            <li><a href="#">新闻动态</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="hide-on-med-and-down" style="height: 100px"></div>
+        <!-- 手机显示 -->
+        <div class="hide-on-large-only tou">
+            <div class="Name">安阳市妇幼保健院</div>
+            <div id="top_icon">
+                <a class="button-collapse waves-effect waves-light" data-activates="slide-out" id="menu_open">
+                    <i class="samll material-icons" style="color: #212020;">menu</i>
+                </a>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+</header>
+<div class="Wwhole"><img src="image/Wwhole.jpg" alt=""></div>
+<div class="Wbox por container">
+    <div class="row">
+        <div class="Wtab wow bounceIn col s12 m12 l9 xl10">
+            <ul class="clearfix">
+                <li class="actived">新闻资讯</li>
+                <li>通知公告</li>
+                <li>视频宣传</li>
+            </ul>
+            <div class="content-wrap">
+                <div class="Wnei row Wyisheng">
+                    <div class="col s4 m2 l2 xl2" style="margin-right: 10px;"><img src="image/jieshao.jpg" alt=""></div>
+                    <div class="WneiD col s8 m10 l10 xl10">
+                        <p class="Wjieshao">姓名：</p>
+                        <p class="Wjieshao">职务：</p>
+                        <p class="Wjieshao">简历：[php限制传出文字个数]这是内容这是内容这是内容这是内容这是内容这内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容这是内容</p>
+                        <p class="Wjieshao">专业：2018-10-88</p>
+                    </div>
+                </div>
+                <div class="Whua" style="margin-bottom: 2rem;">
+                    <div class="Wshijian">
+                        <div class="Xline clearfix">
+                            <p></p>
+                            <p>周一</p>
+                            <p>周二</p>
+                            <p>周三</p>
+                            <p>周四</p>
+                            <p>周五</p>
+                            <p>周六</p>
+                            <p>周日</p>
+                        </div>
+                        <div class="clearfix">
+                            <div class="Xlist">
+                                <p>上午</p>
+                                <p>下午</p>
+                            </div>
+                            <div class="Xyisheng">
+                                <p>
+                                    <a href="#">李丽英</a>
+                                    <a href="#">李丽英</a>
+                                    <a href="#">李丽英</a>
+                                    <a href="#">李丽英</a>
+                                    <a href="#">李丽英</a>
+                                </p>
+                                <p>
+                                    <a href="#">李丽英</a>
+                                    <a href="#">李丽英</a></p>
+                                <p>
+                                    <a href="#">李丽英</a>
+                                    <a href="#">李丽英</a>
+                                </p>
+                                <p>
+                                    <a href="#">李丽英</a>
+                                    <a href="#">李丽英</a>
+                                </p>
+                                <p>
+                                    <a href="#">李丽英</a>
+                                    <a href="#">李丽英</a>
+                                </p>
+                                <p>
+                                    <a href="#">李丽英</a>
+                                    <a href="#">李丽英</a>
+                                </p>
+                                <p>
+                                    <a href="#">李丽英</a>
+                                    <a href="#">李丽英</a>
+                                </p>
+                                <p>
+                                    <a href="#">李丽英</a>
+                                    <a href="#">李丽英</a>
+                                </p>
+                                <p>
+                                    <a href="#">李丽英</a>
+                                    <a href="#">李丽英</a>
+                                </p>
+                                <p>
+                                    <a href="#">李丽英</a>
+                                    <a href="#">李丽英</a>
+                                </p>
+                                <p>
+                                    <a href="#">李丽英</a>
+                                    <a href="#">李丽英</a>
+                                </p>
+                                <p>
+                                    <a href="#">李丽英</a>
+                                    <a href="#">李丽英</a>
+                                </p>
+                                <p>
+                                    <a href="#">李丽英</a>
+                                    <a href="#">李丽英</a>
+                                </p>
+                                <p>
+                                    <a href="#">李丽英</a>
+                                    <a href="#">李丽英</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix Wtousu">
+                    <div>
+                        <p style="margin-bottom: 20px;font-weight: bold;">咨询医生</p>
+                    </div>
+                    <div class="clearfix">
+                        <p>您的姓名</p>
+                        <input type="text" maxlength="16">
+                    </div>
+                    <!--<div class="clearfix">-->
+                        <!--<p>联系方式</p>-->
+                        <!--<input type="text" maxlength="16">-->
+                    <!--</div>-->
+                    <div class="clearfix">
+                        <p>咨询内容</p>
+                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="clearfix">
+                        <p>验证码</p>
+                        <span><img src="" alt=""></span>
+                    </div>
+                    <div class="Wtousu-1"><a href="#">咨询</a></div>
+                </div>
+                <div class="row WReply">
+                    <div class="WReplyLetter">
+                        <div class="WReplyName">
+                            <i class="iconReply"></i><p>患者<span class="color-F46">黎**</span>的留言</p>
+                        </div>
+                        <p class="WReplyTime">2018-04-04</p>
+                    </div>
+                    <div class="WReplyTxt">
+                        <div  class="WReplyMain">留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容</div>
+                        <div class="WReplyVice">
+                            <div class="WReplyVice-1">
+                                <p>医生<i class="color-F3A">回复</i>：</p>
+                                <p>2018-04-04</p>
+                            </div>
+                            <p class="WReplyVice-2">回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容</p>
+                        </div>
+                    </div>
+                    <div class="WReplyInput">
+                        <i>回复：</i><input type="text" placeholder="请输入需要咨询内容">
+                    </div>
+                </div>
+                <div class="row WReply">
+                    <div class="WReplyLetter">
+                        <div class="WReplyName">
+                            <i class="iconReply"></i><p>患者<span class="color-F46">黎**</span>的留言</p>
+                        </div>
+                        <p class="WReplyTime">2018-04-04</p>
+                    </div>
+                    <div class="WReplyTxt">
+                        <div  class="WReplyMain">留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容留言内容</div>
+                        <div class="WReplyVice">
+                            <div class="WReplyVice-1">
+                                <p>医生<i class="color-F3A">回复</i>：</p>
+                                <p>2018-04-04</p>
+                            </div>
+                            <p class="WReplyVice-2">回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容回复内容</p>
+                        </div>
+                    </div>
+                    <div class="WReplyInput">
+                        <i>回复：</i><input type="text" placeholder="请输入需要咨询内容">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="WF hide-on-med-and-down wow bounceIn">
+        <div class="WFimg"><img src="image/WF-1.png" alt=""></div>
+        <a href="#" class="Wa1"><i class="WFicon1"></i><p>特色专科</p></a>
+        <a href="#"><i class="WFicon2"></i><p>专家介绍</p></a>
+        <a href="#"><i class="WFicon3"></i><p>预约挂号</p></a>
+        <a href="#"><i class="WFicon4"></i><p>联系我们</p></a>
+        <div class="WFer"><img src="image/erweima.png" alt=""></div>
+    </div>
+</div>
+
+<!--底部导航栏-->
+<div class="BottomBar hide-on-med-and-down">
+    <div class="bar">
+        <div class="clearfix">
+            <a href="#">首页</a>
+            <a href="#">医院概况</a>
+            <a href="#">新闻中心</a>
+            <a href="#">特色专科</a>
+            <a href="#">专家介绍</a>
+            <a href="#">就诊指南</a>
+            <a href="#">医院文化</a>
+            <a href="#">党团建设</a>
+            <a href="#">院务公开</a>
+        </div>
+    </div>
+    <div class="BottomBar-1">
+        <div class="BottomXin">
+            <div><img src="image/erweima.png" alt=""></div>
+            <ul>
+                <li>地址:河南省安阳市解放大道92号</li>
+                <li>联系电话:0372-3285209</li>
+                <li>乘车路线:市内可乘1路、11路、37路、38路公交到达</li>
+                <li>友情链接:趣医网安阳市妇幼保健院</li>
+                <li>豫ICP备13018883号</li>
+            </ul>
+        </div>
+        <div class="BottomMing">
+            <div>服务声明：本网站旨在提供医患互动交流平台，问题回答结果建议性内容，不能作为诊断医疗的依据！</div>
+            <div>上班时间：    上午8:00~12：00 下午14:30~17:30    急诊科实行全年24小时开放就诊（节假日正常）</div>
+        </div>
+    </div>
+    <div class="Copyright">Copyright(C) 2014 All Rights Reserved www.ayfy.com.cn 版权所有 严禁转载！技术支持：河南相映红信息技术有限公司</div>
+</div>
+<!--底部导航栏-手机-->
+<div class="hide-on-large-only RBottom">
+    <div class="RBottom-img"><img src="image/erweima.png" alt=""></div>
+    <ul>
+        <li>地址:河南省安阳市解放大道92号</li>
+        <li>联系电话:0372-3285209</li>
+        <li>乘车路线:市内可乘1路、11路、37路、38路公交到达</li>
+        <li>友情链接:趣医网安阳市妇幼保健院</li>
+        <li>豫ICP备13018883号</li>
+    </ul>
+</div>
+
+</body>
+</html>

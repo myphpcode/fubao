@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="Wbox por container">
+    <div class="row">
+        <div class="Wtab tab3 wow bounceIn col s12 m12 l9 xl10">
+            <ul class="tab-nav">
+
+                <li class="actived"></li>
+
+
+            </ul>
+            <div class="content-wrap clearfix">
+                <div class="content-item current">
+
+                    {volist name="ldoc" id="vo"}
+                    <a href="{:url('index/doctor/index',['id'=>$vo.id])}" class="Wnei row Wjs">
+                        {if condition="!empty($vo.pic_url               )"}
+                        <img class="col s4 m2 l2 xl2" src="/static/uploads/{$vo.pic_url}" alt="">
+                        {else/}
+                        没有缩略图
+                        {/if}
+                        <div class="WneiD col s8 m10 l10 xl10">
+                            <p class="Wjieshao">姓名：{$vo.name}</p>
+
+                            <p class="Wjieshao omit2">职位：{$vo.ranks}</p>
+
+                        </div>
+                    </a>
+                    {/volist}
+
+                </div>
+                <div class="content-item PPbox">
+                    内容盒子~
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="WF hide-on-med-and-down wow bounceIn">
+        <div class="WFimg"><img src="__index__/image/WF-1.png" alt=""></div>
+        <a href="#" class="Wa1"><i class="WFicon1"></i><p>特色专科</p></a>
+        <a href="#"><i class="WFicon2"></i><p>专家介绍</p></a>
+        <a href="#"><i class="WFicon3"></i><p>预约挂号</p></a>
+        <a href="#"><i class="WFicon4"></i><p>联系我们</p></a>
+        <div class="WFer"><img src="__index__/image/erweima.png" alt=""></div>
+    </div>
+</div>
+</body>
+</html>

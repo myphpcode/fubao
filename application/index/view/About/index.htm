@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0, maximum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>安阳妇幼__</title>
+    <link rel="stylesheet" href="__index__/css/animate.css">
+    <link rel="stylesheet" href="__index__/css/style.css"/>
+    <link rel="stylesheet" href="__index__/css/materialize.css"/>
+    <link rel="stylesheet" href="__index__/css/swiper.css">
+    <link rel="stylesheet" href="__index__/fonts/fonts.css">
+    <script src="__index__/js/jquery-3.3.1.js"></script>
+    <script src="__index__/js/materialize.js"></script>
+    <script type="text/javascript" src="__index__/js/tab.js"></script>
+    <script src="__index__/js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <!--<style>-->
+    <!--#yscon a{-->
+    <!--width: 19%;-->
+    <!--}-->
+    <!--#yscon a:not(:first-child){-->
+    <!--margin-left: 1%;-->
+    <!--}-->
+    <!--</style>-->
+</head>
+<body>
+{include file="common/head"}
+<div class="Wwhole"><img src="__index__/image/Wwhole.jpg" alt=""></div>
+<div class="Wbox por container">
+    <div class="row">
+        <div class="Wtab wow bounceIn col s12 m12 l9 xl10" id="Ttab">
+            <ul class="clearfix">
+                {volist name="abouts" id="vo"}
+               {if condition="$vo.id  eq $about.id"}
+                <li class="actived">{$vo.title}</li>
+               {else/}
+                <li>{$vo.title}</li>
+                {/if}
+            {/volist}
+            </ul>
+            <div class="con">
+            <div class="content-wrap PPbox" id="con1">
+           {$about.content}
+            </div>
+            <!--<div class="content-wrap PPbox " id="con2">-->
+
+
+             <!--22-->
+            <!--</div>-->
+            <!--<div class="content-wrap PPbox " id="con3">-->
+
+              <!--33-->
+            <!--</div>-->
+            </div>
+        </div>
+    </div>
+    {include file="common/right"}
+</div>
+<script>
+    $('#Ttab li').click(function(){
+        $(this).addClass('actived').siblings().removeClass('actived');
+         var index = $(this).index()+1;
+        window.location.href ="/about/"+index+".html";
+    })
+</script>
+<!--底部导航栏-->
+{include file="common/footer"}

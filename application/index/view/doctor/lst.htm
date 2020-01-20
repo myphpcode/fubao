@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0, maximum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>安阳妇幼__专家介绍</title>
+    <link rel="stylesheet" href="__index__/css/animate.css">
+    <link rel="stylesheet" href="__index__/css/style.css"/>
+    <link rel="stylesheet" href="__index__/css/materialize.css"/>
+    <link rel="stylesheet" href="__index__/css/swiper.css">
+    <link rel="stylesheet" href="__index__/fonts/fonts.css">
+    <script src="__index__/js/jquery-3.3.1.js"></script>
+    <script src="__index__/js/materialize.js"></script>
+    <script type="text/javascript" src="__index__/js/tab.js"></script>
+    <script src="__index__/js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <!--<style>-->
+    <!--#yscon a{-->
+    <!--width: 19%;-->
+    <!--}-->
+    <!--#yscon a:not(:first-child){-->
+    <!--margin-left: 1%;-->
+    <!--}-->
+    <!--</style>-->
+</head>
+<body>
+{include file="common/head"}
+<div class="Wwhole"><img src="__index__/image/Wwhole.jpg" alt=""></div>
+<div class="Wbox por container">
+    <div class="row">
+        <div class="Wtab wow bounceIn col s12 m12 l9 xl10">
+            <ul class="clearfix Wyuyue">
+                <li class="actived">儿内科</li>
+                <li>妇产科</li>
+                <li>乳腺科</li>
+                <li>生殖遗传</li>
+                <li>耳鼻喉科</li>
+                <li>保健部</li>
+                <li>儿外科</li>
+                <li>口腔科</li>
+                <li>医技辅助</li>
+            </ul>
+            <script>
+                var keshi =0;
+                $(function(){
+
+                    ykeshi = 0;
+                    var url="{:url('index/doctor/keshi')}";
+                    $.ajax({
+                        url:url,
+                        type:'POST', //GET
+                        async:true,    //或false,是否异步
+                        data:{
+                            keshi:keshi,
+                        },
+                        timeout:500,    //超时时间
+                        dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+                        success:function(data){
+                            // console.log(data);
+                            $('#xcon').empty().append(data);
+
+                        },
+                    })
+                })
+                $('.Wyuyue li').click(function(){
+                    $(this).addClass('actived').siblings().removeClass('actived');
+                    // $('#xcon').html('');
+                    keshi =  $(this).index();
+                    console.log(keshi);
+                    var url="{:url('index/doctor/keshi')}";
+                    $.ajax({
+                        url:url,
+                        type:'POST', //GET
+                        async:true,    //或false,是否异步
+                        data:{
+                            keshi:keshi,
+                        },
+                        timeout:500,    //超时时间
+                        dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+                        success:function(data){
+
+                            // console.log(data);
+                            $('#xcon').empty().append(data);
+                        },
+                    })
+                })
+            </script>
+
+            <div class="content-wrap current" id="xcon">
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="Wpaging wow bounceIn">
+       <!--{$ldoc->render()}-->
+
+    </div>
+
+    {include file="common/right"}
+</div>
+{include file="common/footer"}

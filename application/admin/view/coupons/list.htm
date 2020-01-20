@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html><head>
+	    <meta charset="utf-8">
+    <title>童老师ThinkPHP交流群：484519446</title>
+
+    <meta name="description" content="Dashboard">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--Basic Styles-->
+    <link href="__admin__/style/bootstrap.css" rel="stylesheet">
+    <link href="__admin__/style/font-awesome.css" rel="stylesheet">
+    <link href="__admin__/style/weather-icons.css" rel="stylesheet">
+
+    <!--Beyond styles-->
+    <link id="beyond-link" href="__admin__/style/beyond.css" rel="stylesheet" type="text/css">
+    <link href="__admin__/style/demo.css" rel="stylesheet">
+    <link href="__admin__/style/typicons.css" rel="stylesheet">
+    <link href="__admin__/style/animate.css" rel="stylesheet">
+    
+</head>
+<body>
+	<!-- 头部 -->
+    {include file="common/top"}
+	<!-- /头部 -->
+	
+	<div class="main-container container-fluid">
+		<div class="page-container">
+			<!-- Page Sidebar -->
+            {include file="common/left"}
+            <!-- /Page Sidebar -->
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- Page Breadcrumb -->
+                <div class="page-breadcrumbs">
+                    <ul class="breadcrumb">
+                                        <li>
+                        <a href="{:url('Index/index')}">系统</a>
+                    </li>
+                                        <li class="active">优惠券管理</li>
+                                        </ul>
+                </div>
+                <!-- /Page Breadcrumb -->
+
+                <!-- Page Body -->
+                <div class="page-body">
+                    
+<button type="button" tooltip="添加优惠券" class="btn btn-sm btn-azure btn-addon" onClick="javascript:window.location.href = '{:url('Coupons/add')}'"> <i class="fa fa-plus"></i> Add
+</button>
+<div class="row">
+    <div class="col-lg-12 col-sm-12 col-xs-12">
+        <div class="widget">
+            <div class="widget-body">
+                <div class="flip-scroll">
+                    <table class="table table-bordered table-hover">
+                        <thead class="">
+                            <tr>
+                                <th class="text-center" width="8%">ID</th>
+                                <th>名称</th>
+                                <th>发放数量</th>
+                                <th>已领取</th>
+                                <th>所需最低价</th>
+                                <th>节省价格</th>
+                                <th>开始日期</th>
+                                <th>结束日期</th>
+                                <th>添加时间</th>
+                                <th class="text-center" width="16%">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {volist name="couponsRes" id="coupons"}
+                                <tr>
+                                    <td align="center">{$coupons.id}</td>
+                                    <td>{$coupons.cp_name}</td>
+                                    <td>{$coupons.cp_num}</td>
+                                    <td>{$coupons.cp_taken_num}</td>
+                                    <td>{$coupons.goods_total_price}</td>
+                                    <td>{$coupons.minus_price}</td>
+                                    <td>{$coupons.start_date|date="Y-m-d",###}</td>
+                                    <td>{$coupons.end_date|date="Y-m-d",###}</td>
+                                    <td>{$coupons.add_time|date="Y-m-d H:i:s",###}</td>
+                                    <td align="center">
+                                        <a href="{:url('edit',array('id'=>$coupons['id']))}" class="btn btn-primary btn-sm shiny">
+                                            <i class="fa fa-edit"></i> 编辑
+                                        </a>
+                                        {if condition="$coupons['del_status'] eq 0"}
+                                        <a href="#" onClick="warning('确实要禁用吗', '{:url('del',array('id'=>$coupons['id']))}')" class="btn btn-danger btn-sm shiny">
+                                            <i class="fa fa-trash-o"></i> 禁用
+                                        </a>
+                                        {else /}
+                                        已禁用
+                                        {/if}
+                                    </td>
+                                </tr>
+                            {/volist}
+                        </tbody>
+                    </table>
+                </div>
+                <div style="padding-top:10px; text-align:right;">
+                {$couponsRes->render()}
+                </div>
+                <div>
+                	                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                </div>
+                <!-- /Page Body -->
+            </div>
+            <!-- /Page Content -->
+		</div>	
+	</div>
+
+	    <!--Basic Scripts-->
+    <script src="__admin__/style/jquery_002.js"></script>
+    <script src="__admin__/style/bootstrap.js"></script>
+    <script src="__admin__/style/jquery.js"></script>
+    <!--Beyond Scripts-->
+    <script src="__admin__/style/beyond.js"></script>
+    
+
+
+</body></html>

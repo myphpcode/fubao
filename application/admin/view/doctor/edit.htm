@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html><head>
+        <meta charset="utf-8">
+    <title>河南相映红</title>
+
+    <meta name="description" content="Dashboard">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--Basic Styles-->
+    <link href="__admin__/style/bootstrap.css" rel="stylesheet">
+    <link href="__admin__/style/font-awesome.css" rel="stylesheet">
+    <link href="__admin__/style/weather-icons.css" rel="stylesheet">
+
+    <!--Beyond styles-->
+    <link id="beyond-link" href="__admin__/style/beyond.css" rel="stylesheet" type="text/css">
+    <link href="__admin__/style/demo.css" rel="stylesheet">
+    <link href="__admin__/style/typicons.css" rel="stylesheet">
+    <link href="__admin__/style/animate.css" rel="stylesheet">
+    <script src="__plus__/ueditor/ueditor.config.js"></script>
+    <script src="__plus__/ueditor/ueditor.all.min.js"></script>
+    <script src="__plus__/ueditor/lang/zh-cn/zh-cn.js"></script>
+</head>
+<body>
+    <!-- 头部 -->
+    {include file="common/top"}
+    <!-- /头部 -->
+    
+    <div class="main-container container-fluid">
+        <div class="page-container">
+            <!-- Page Sidebar -->
+            {include file="common/left"}
+            <!-- /Page Sidebar -->
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- Page Breadcrumb -->
+                <div class="page-breadcrumbs">
+                    <ul class="breadcrumb">
+                                        <li>
+                        <a href="{:url('Index/index')}">系统</a>
+                    </li>
+                                        <li>
+                        <a href="{:url('lst')}">医生管理</a>
+                    </li>
+                                        <li class="active">修改医生</li>
+                                        </ul>
+                </div>
+                <!-- /Page Breadcrumb -->
+
+                <!-- Page Body -->
+                <div class="page-body">
+                    
+<div class="row">
+    <div class="col-lg-12 col-sm-12 col-xs-12">
+        <div class="widget">
+            <div class="widget-header bordered-bottom bordered-blue">
+                <span class="widget-caption">修改医生</span>
+            </div>
+            <div class="widget-body">
+                <div id="horizontal-form">
+                    <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="id" value="{$arts.id}">
+                        <div class="form-group">
+                            <label for="username" class="col-sm-2 control-label no-padding-right">姓名</label>
+                            <div class="col-sm-6">
+                                <input class="form-control" placeholder="" name="name" value="{$arts.name}" required="" type="text">
+                            </div>
+                            <p class="help-block col-sm-4 red">* 必填</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="username" class="col-sm-2 control-label no-padding-right">职称</label>
+                            <div class="col-sm-6">
+                                <input class="form-control" placeholder="" name="ranks" value="{$arts.ranks}" required="" type="text">
+                            </div>
+                            <p class="help-block col-sm-4 red">* 必填</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="username" class="col-sm-2 control-label no-padding-right">科室</label>
+                            <div class="col-sm-6">
+                                <select name="department">
+                                    <option value="">请选择</option>
+
+
+                                    <option {if condition="$arts.department  eq 1 "} selected="selected" {/if} value="1" >儿内科</option>
+                                    <option {if condition="$arts.department  eq 2 "} selected="selected" {/if} value="2">妇产科</option>
+                                    <option {if condition="$arts.department  eq 3 "} selected="selected" {/if} value="3">乳腺科</option>
+                                    <option {if condition="$arts.department  eq 4 "} selected="selected" {/if} value="4">生殖遗传</option>
+                                    <option {if condition="$arts.department  eq 5 "} selected="selected" {/if} value="5">耳鼻喉科</option>
+                                    <option {if condition="$arts.department  eq 6 "} selected="selected" {/if} value="6">保健部</option>
+                                    <option {if condition="$arts.department  eq 7 "} selected="selected" {/if} value="7">儿外科</option>
+                                    <option {if condition="$arts.department  eq 8 "} selected="selected" {/if}  value="8">口腔科</option>
+                                    <option {if condition="$arts.department  eq 9 "} selected="selected" {/if} value="9">医技辅助</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="username" class="col-sm-2 control-label no-padding-right">简介</label>
+                            <div class="col-sm-6">
+                                <textarea class="form-control" name="intro">{$arts.intro}</textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="username" class="col-sm-2 control-label no-padding-right">擅长</label>
+                            <div class="col-sm-6">
+
+                                <textarea class="form-control" name="skilled">{$arts.skilled}</textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="username" class="col-sm-2 control-label no-padding-right">排班表</label>
+                            <div class="col-sm-6">
+                                <div class="checkbox">
+                                    {foreach name="sarr" item="vo" key="k" }
+
+                                    <label style="margin-right:15px;">
+                                        <input type="checkbox" name="schedule[]" {if condition="in_array($vo,$schedule)"}checked="checked"{/if} value="{$vo}" class="colored-blue">
+                                        <span class="text">{switch name="(int)($k/2)" }
+    {case value="0" break="0或1"}周日{/case}
+    {case value="1"}周一{/case}
+   {case value="2"}周二{/case}
+     {case value="3"}周三{/case}
+   {case value="4"}周四{/case}
+    {case value="5"}周五{/case}
+   {case value="6"}周六{/case}
+{/switch}{if condition="$k%2 eq 0"}上午{else/}下午{/if}</span>
+                                    </label>
+                                    {/foreach}
+
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="username" class="col-sm-2 control-label no-padding-right">缩略图</label>
+                            <div class="col-sm-6">
+                                <input placeholder="" name="pic_url" type="file">
+                                {if condition="$arts['pic_url']"}
+                                    <img src="__uploads__/{$arts.pic_url}" height="30">
+                                {else /}
+                                    暂无缩略图
+                                {/if}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-default">保存信息</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                </div>
+                <!-- /Page Body -->
+            </div>
+            <!-- /Page Content -->
+        </div>  
+    </div>
+
+        <!--Basic Scripts-->
+    <script src="__admin__/style/jquery_002.js"></script>
+    <script src="__admin__/style/bootstrap.js"></script>
+    <script src="__admin__/style/jquery.js"></script>
+    <!--Beyond Scripts-->
+    <script src="__admin__/style/beyond.js"></script>
+    <script type="text/javascript">
+    //实例化编辑器
+    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+    UE.getEditor('content',{initialFrameWidth:800,initialFrameHeight:400,});
+    </script>
+
+
+</body></html>

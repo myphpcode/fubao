@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0, maximum-scale=1,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <title>安阳妇幼__{$cates.cate_name}</title>
+    <link rel="stylesheet" href="__index__/css/animate.css">
+    <link rel="stylesheet" href="__index__/css/style.css"/>
+    <link rel="stylesheet" href="__index__/css/materialize.css"/>
+    <link rel="stylesheet" href="__index__/css/swiper.css">
+    <link rel="stylesheet" href="__index__/fonts/fonts.css">
+    <script src="__index__/js/jquery-3.3.1.js"></script>
+    <script src="__index__/js/materialize.js"></script>
+    <script type="text/javascript" src="__index__/js/tab.js"></script>
+    <script src="__index__/js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <!--<style>-->
+    <!--#yscon a{-->
+    <!--width: 19%;-->
+    <!--}-->
+    <!--#yscon a:not(:first-child){-->
+    <!--margin-left: 1%;-->
+    <!--}-->
+    <!--</style>-->
+</head>
+<body>
+{include file="common/head"}
+<div class="Wwhole"><img src="__index__/image/Wwhole.jpg" alt=""></div>
+<div class="Wbox por container">
+    <div class="row">
+        <div class="Wtab wow bounceIn col s12 m12 l9 xl10" id="Ttab">
+            <ul class="clearfix">
+                {if condition="$cates.pid neq 0"}
+       {volist name="scate" id="vo"}
+             {if condition="$cates.id eq $vo.id"}
+                <li class="actived" value="{$vo.id}" >{$vo.cate_name}</li>
+                {else/}
+                <li value="{$vo.id}">{$vo.cate_name}</li>
+                {/if}
+            {/volist}
+                {else/}
+                <li class="actived" value="{$cates.id}">{$cates.cate_name}</li>
+                {/if}
+
+                <!--<li class="actived">{$cates.cate_name}</li>-->
+
+            </ul>
+            <div class="Tlist">
+{if condition="$cates.id eq 28"}
+
+                {volist name="artRes" id="vo"}
+                <a href="{:url('index/article/index',['id'=>$vo.id])}" class="Wnei row">
+                    <img class="col s4 m3 l3 xl2" src="/static/uploads/{$vo.thumb}" alt="">
+                    <div class="WneiD col s8 m9 l9 xl10">
+                        <p class="Wp1 omit">{$vo.title}</p>
+                        <p class="Wp2 omit2">{$vo.description|mb_substr=0,80,'utf-8'}</p>
+                        <p class="Wp3">{$vo.addtime|date='Y-m-d',###}</p>
+                    </div>
+                </a>
+                {/volist}
+                {elseif condition="$cates.id eq 29"}
+                {volist name="artRes" id="vo"}
+                <a href="{:url('index/article/index',['id'=>$vo.id])}" class="Tgai">
+                    <div class="Znews">
+                        <div class="Ztime">
+                            <!--<div class="Tgai2">-->
+                            <p class="Zday">{$vo.addtime|date='d',###}</p>
+                            <p class="Zdays">{$vo.addtime|date='Y/m',###}</p>
+                            <!--</div>-->
+                        </div>
+                        <div class="Zxin">
+                            <p class="Ztitle omit">{$vo.title}</p>
+                            <p class="Zdeta omit2">{$vo.description|mb_substr=0,100,'utf-8'}</p>
+                        </div>
+                    </div>
+                </a>
+                {/volist}
+                {elseif condition="$cates.id eq 18"}
+                <ul class="Zlist">
+                {volist name="artRes" id="vo"}
+                <li><a href="{:url('index/article/index',['id'=>$vo.id])}"><i class="Ttxt">{$vo.title}</i><span class="Tday">{$vo.addtime|date='Y-m-d',###}</span></a></li>
+                {/volist}
+                </ul>
+                <!--<ul class="Zlist">-->
+                    <!--{volist name="artRes" id="vo"}-->
+                    <!--<li><img src="/static/uploads/{$vo.thumb}"/><a href="{:url('index/article/index',['id'=>$vo.id])}"><i class="Ttxt">{$vo.title}</i><span class="Tday">{$vo.addtime|date='Y-m-d',###}</span></a></li>-->
+                    <!--{/volist}-->
+                <!--</ul>-->
+               {else/}
+                <ul class="Zlist">
+                    {volist name="artRes" id="vo"}
+                    <li><a href="{:url('index/article/index',['id'=>$vo.id])}"><i class="Ttxt">{$vo.title}</i><span class="Tday"></span></a></li>
+                    {/volist}
+                </ul>
+
+                {/if}
+            </div>
+            <div class="Wpaging w
+            ow bounceIn">
+
+                {$artRes->render()}
+
+            </div>
+        </div>
+    </div>
+    {include file="common/right"}
+</div>
+<script>
+    // var  cid={$cates['id']};
+
+    $('#Ttab li').click(function(){
+        $(this).addClass('actived').siblings().removeClass('actived');
+        var val = $(this).val();
+
+        window.location.href ="/cate/"+val+'.html'
+    })
+</script>
+<!--底部导航栏-->
+{include file="common/footer"}

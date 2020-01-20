@@ -1,0 +1,69 @@
+<div class="user-side" ectype="userSide">
+<div class="user-mod user-perinfo">
+    <div class="profile clearfix">
+<div class="avatar">
+    <a href="#" class="u-pic">
+    {if condition="$leftUserInfo['avatar_src']"}
+        <img src="__uploads__/{$leftUserInfo.avatar_src}" alt="">
+    {else /}
+        <img src="__index__/img/touxiang.jpg" alt="">
+    {/if}
+    </a>
+</div>
+<div class="name">
+    <h2>{$leftUserInfo.nick_name}</h2>
+    <div class="user-rank user-rank-1">铜牌</div>
+</div>
+    </div>
+    <div class="account">
+<div class="item clearfix">
+    <div class="item-name">账户资料：</div>
+    <div class="item-main">
+{if condition="$registerType eq 1"}
+<b class="integrity"><em style="width: 70%;"></em></b><span>70%</span>
+{elseif condition="$registerType eq 0" /}
+<b class="integrity"><em style="width: 60%;"></em></b><span>60%</span>
+{else/}
+<b class="integrity"><em style="width: 100%;"></em></b><span>100%</span>
+{/if}
+    </div>
+</div>
+<div class="item clearfix">
+    <div class="item-name">账户安全：</div>
+    <div class="item-main safe">
+{if condition="($registerType eq 0) OR ($registerType eq 2)"}
+<a href="#" class="iconfont icon-email active"><span class="tip">邮箱已验证</span></a>
+{else /}
+<a href="#" class="iconfont icon-email"><span class="tip">邮箱未验证</span></a>
+{/if}
+<a href="#" class="iconfont icon-password active"><span class="tip">密码已设置</span></a>
+{if condition="($registerType eq 1) OR ($registerType eq 2)"}
+<a href="#" class="iconfont icon-mobile-phone active"><span class="tip">手机已验证</span></a>
+{else /}
+<a href="#" class="iconfont icon-mobile-phone"><span class="tip">手机未验证</span></a>
+{/if}
+    </div>
+
+</div>
+    </div>
+</div>
+<div class="user-mod">
+    <div class="side-menu">
+    <dl>
+<dt><i class="square"></i><span>订单中心</span></dt>
+<dd>
+    <p><a href="{:url('member/Order/orderList')}" target="_self">我的订单</a></p>
+    <p><a href="{:url('member/Address/index')}" target="_self">收货地址</a></p>
+</dd>
+    </dl>
+    <dl>
+<dt><i class="square"></i><span>会员中心</span></dt>
+<dd>
+    <p><a href="{:url('member/User/userInfo')}" target="_self">用户信息</a></p>
+    </dd>
+<dd>
+    <p><a href="{:url('member/Coupons/index')}" target="_self">优惠券</a></p>
+    </dd>
+    </dl>
+    </div></div>
+    </div>
